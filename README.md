@@ -1,4 +1,4 @@
-**Linux RPM updates:** [Enable DNF updates and publish releases](docs/RPM-updates.md).
+**Desktop downloads and updates:** [Download CedarLogic](https://fishlord2222.github.io/CedarLogic/) · [Linux / DNF](docs/RPM-updates.md) · [Windows startup updates](docs/Windows-updates.md).
 
 
 # About CedarLogic

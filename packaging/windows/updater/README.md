@@ -1,0 +1,1 @@
+These files mirror the updater and integration points in the maintained Qt desktop source. They are provided for review; the complete source used to build the release is in the Source.tar.gz release asset. See ../../../docs/Windows-updates.md for building and publishing.

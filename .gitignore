@@ -11,4 +11,8 @@ res/KLS_Logic.chw
 # Generated RPM repository output and private signing material
 /_site/
 /rpm-signing-private/
+/windows-signing-private/
 *.secret.asc
+
+__pycache__/
+*.pyc

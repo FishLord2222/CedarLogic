@@ -46,16 +46,17 @@ To stop receiving repository updates, set `enabled=0` in
 2. Include `cedarlogic.repo` and `RPM-GPG-KEY-cedarlogic` from `packaging/rpm/`
    in the source packaging directory. The spec installs them into `/etc`.
    These public files are safe to ship; never bundle the private key.
-3. Create new release tags from the maintained `master` branch so the tag
+3. Upload both the Windows installer and Linux RPM before publishing; the
+   shared Pages deployment builds updates for both platforms. Create new release tags from the maintained `master` branch so the tag
    contains the publishing workflow. Upload the RPM as
    `cedarlogic-VERSION-x86_64.rpm` to a stable GitHub release.
    Upload assets before publishing the release when possible.
-4. Publish the release. The **Publish RPM repository** workflow downloads the
+4. Publish the release. The **Publish desktop updates** workflow downloads the
    latest stable release RPM, signs a copy, verifies it, creates repository
    metadata, signs that metadata, and deploys the result with GitHub Pages.
 
 If an asset was uploaded after the release was published, run **Actions →
-Publish RPM repository → Run workflow** after the upload finishes. Replacing a
+Publish desktop updates → Run workflow** after the upload finishes. Replacing a
 release asset by itself does not trigger a workflow. Editing a stable release
 also triggers publishing. Drafts and prereleases are excluded.
 For historical tags that predate this workflow, use **Run workflow** on
@@ -112,3 +113,5 @@ checksums, and a download page. It contains no private signing material.
 The released 3.08 desktop build is maintained separately from the older source
 tree in this GitHub repository. This publishing workflow distributes tested
 release assets; it does not rebuild the desktop application from this tree.
+
+The same deployment publishes the [Windows startup update feed](Windows-updates.md).
