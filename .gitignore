@@ -7,3 +7,8 @@ res/settings.ini
 res/KLS_Logic.chw
 /.vs
 /CMakeSettings.json
+
+# Generated RPM repository output and private signing material
+/_site/
+/rpm-signing-private/
+*.secret.asc

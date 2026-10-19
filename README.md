@@ -1,3 +1,5 @@
+**Linux RPM updates:** [Enable DNF updates and publish releases](docs/RPM-updates.md).
+
 
 # About CedarLogic
 CedarLogic is a digital logic simulator often used in university classroom instruction. It includes all the basic gates, buses, JK and D flip flops, muxes, decoders, and a [Z80 micro-processor](https://en.wikipedia.org/wiki/Zilog_Z80). At [Cedarville University](https://www.cedarville.edu/) it has been used by Computer Architecture 1 students to build and simulate a full [mano-machine](https://en.wikipedia.org/wiki/Mano_machine). 
