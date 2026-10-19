@@ -46,7 +46,9 @@ To stop receiving repository updates, set `enabled=0` in
 2. Include `cedarlogic.repo` and `RPM-GPG-KEY-cedarlogic` from `packaging/rpm/`
    in the source packaging directory. The spec installs them into `/etc`.
    These public files are safe to ship; never bundle the private key.
-3. Upload the RPM as `cedarlogic-VERSION-x86_64.rpm` to a stable GitHub release.
+3. Create new release tags from the maintained `master` branch so the tag
+   contains the publishing workflow. Upload the RPM as
+   `cedarlogic-VERSION-x86_64.rpm` to a stable GitHub release.
    Upload assets before publishing the release when possible.
 4. Publish the release. The **Publish RPM repository** workflow downloads the
    latest stable release RPM, signs a copy, verifies it, creates repository
@@ -56,6 +58,8 @@ If an asset was uploaded after the release was published, run **Actions →
 Publish RPM repository → Run workflow** after the upload finishes. Replacing a
 release asset by itself does not trigger a workflow. Editing a stable release
 also triggers publishing. Drafts and prereleases are excluded.
+For historical tags that predate this workflow, use **Run workflow** on
+`master`; editing such a release may not start the workflow automatically.
 
 The publisher always uses GitHub's latest stable release, including when an
 older release is edited. Failed builds leave the previously deployed site in
