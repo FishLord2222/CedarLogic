@@ -168,7 +168,10 @@ def main():
     ET.SubElement(item, 'title').text = 'CedarLogic ' + label
     ET.SubElement(item, f'{{{SPARKLE}}}version').text = version
     ET.SubElement(item, f'{{{SPARKLE}}}shortVersionString').text = label
-    ET.SubElement(item, f'{{{SPARKLE}}}minimumSystemVersion').text = '10.0'
+    # The 3.08 updater uses VerifyVersionInfo without a supportedOS manifest.
+    # A Windows 10 minimum here silently hides updates from those existing
+    # Windows 10/11 clients. Keep the migration feed free of that OS filter;
+    # CedarLogic itself still targets Windows 10/11.
     ET.SubElement(item, 'pubDate').text = format_datetime(
         datetime.fromisoformat(release['published_at'].replace('Z', '+00:00')))
     ET.SubElement(item, 'description').text = (
