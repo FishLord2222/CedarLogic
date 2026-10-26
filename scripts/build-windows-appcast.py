@@ -165,6 +165,8 @@ def main():
     ET.SubElement(channel, 'language').text = 'en'
     item = ET.SubElement(channel, 'item')
     label = release['tag_name'].lstrip('v')
+    if re.search(r'\bhotfix\b', release.get('name', ''), re.IGNORECASE):
+        label += ' Hotfix'
     ET.SubElement(item, 'title').text = 'CedarLogic ' + label
     ET.SubElement(item, f'{{{SPARKLE}}}version').text = version
     ET.SubElement(item, f'{{{SPARKLE}}}shortVersionString').text = label
